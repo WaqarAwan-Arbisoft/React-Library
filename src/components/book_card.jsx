@@ -2,18 +2,19 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 
-const BookCard = () => {
+const BookCard = (props) => {
     return (
         <>
             <Card className='m-4' style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={props.book.image} style={{ height: '400px' }} />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>{props.book.name}</Card.Title>
                     <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
+                        <div>
+                            <b>Published By: </b>{props.book.author.name}
+                        </div>
                     </Card.Text>
-                    <Button className='btn btn-success'>Show more</Button>
+                    <Button className='btn btn-success'>Show Details</Button>
                 </Card.Body>
             </Card>
         </>

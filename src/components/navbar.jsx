@@ -7,7 +7,6 @@ const AppNavbar = () => {
     let location = useLocation().pathname.toString();
     location = location.split('/');
     location = location[location.length - 1]
-    console.log(location)
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -24,12 +23,12 @@ const AppNavbar = () => {
                             <Link className={location.toLowerCase() === 'add-book' ? 'text-indigo-600' : 'text-black'} to="/add-book">Add Book</Link>
                         </Nav.Link>
                         <Nav.Link>
-                        <Link className={location.toLowerCase() === 'authors' ? 'text-indigo-600' : 'text-black'} to="/authors">Authors</Link>
+                            <Link className={location.toLowerCase() === 'authors' ? 'text-indigo-600' : 'text-black'} to="/authors">Authors</Link>
                         </Nav.Link>
                         <Nav.Link>
-                        <Link className={location.toLowerCase() === 'add-author' ? 'text-indigo-600' : 'text-black'} to="/add-author">Add Author</Link>
+                            <Link className={location.toLowerCase() === 'add-author' ? 'text-indigo-600' : 'text-black'} to="/add-author">Add Author</Link>
                         </Nav.Link>
-                            
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>
