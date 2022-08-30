@@ -1,13 +1,13 @@
-const AddBook = () => {
-    const addBookSubmitHandler=(e)=>{
+const AddAuthor=()=>{
+    const addAuthorSubmitHandler=(e)=>{
         e.preventDefault();
         console.log("submitted")
     }
     return (
     <div className="container rounded-2xl">
-        <h1 className="m-3 text-center">Add New Book</h1>
+        <h1 className="m-3 text-center">Add New Author</h1>
         <div class="mt-5 md:col-span-2 md:mt-0">
-            <form onSubmit={addBookSubmitHandler} >
+            <form onSubmit={addAuthorSubmitHandler} >
                 <div class="shadow sm:overflow-hidden sm:rounded-md">
                 <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
                     <div class="grid grid-cols-3 gap-6">
@@ -78,4 +78,4 @@ const AddBook = () => {
     )
 }
 
-export default AddBook;
+export default AddAuthor;
