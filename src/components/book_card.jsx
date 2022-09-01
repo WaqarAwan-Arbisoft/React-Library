@@ -10,9 +10,7 @@ const BookCard = (props) => {
                 <Card.Body>
                     <Card.Title>{props.book.name}</Card.Title>
                     <Card.Text>
-                        <div>
-                            <b>Published By: </b>{props.book.author.name}
-                        </div>
+                        <b>Published By: </b>{props.book.author.name}<br></br>
                     </Card.Text>
                     <Button className='btn btn-success'>Show Details</Button>
                 </Card.Body>

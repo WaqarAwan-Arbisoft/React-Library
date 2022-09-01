@@ -5,7 +5,7 @@ const Books = () => {
     const [bookList, setBookList] = useState([]);
     useEffect(() => {
         const fetchBooksData = async () => {
-            let response = await fetch(`${process.env.REACT_APP_DOMAIN}/books`)
+            let response = await fetch(`${process.env.REACT_APP_BACKEND_DOMAIN}/books`)
             if (response.ok) {
                 let respData = await response.json();
                 setBookList([...respData])
