@@ -16,3 +16,7 @@ a {
   height: 50vh;
   color: white;
 }
+
+.padding-left-50px {
+  padding-left: 50px !important;
+}
