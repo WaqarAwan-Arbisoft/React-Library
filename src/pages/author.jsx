@@ -6,7 +6,7 @@ const Author = () => {
     const [authorsList, setAuthorsList] = useState([])
     useEffect(() => {
         const fetchAllAuthors = async () => {
-            let response = await fetch("http://localhost:8000/authors/");
+            let response = await fetch(`${process.env.REACT_APP_BACKEND_DOMAIN}/authors/`);
             if (response.ok) {
                 let respData = await response.json();
                 setAuthorsList([...respData])

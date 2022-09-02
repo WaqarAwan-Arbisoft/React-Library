@@ -18,7 +18,6 @@ const AuthorCard = (props) => {
                 </div>
 
             </Card.Body>
-            <Button className='btn btn-success'>Show more</Button>
         </Card>
     )
 }

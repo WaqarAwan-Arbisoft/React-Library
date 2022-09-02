@@ -10,7 +10,7 @@ const AddAuthor = () => {
     const [error, setError] = useState({ status: false, message: "" })
     const [success, setSuccess] = useState({ status: false, message: "" })
     const addAuthorSubmitHandler = async () => {
-        const response = await fetch("http://localhost:8000/authors/", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_DOMAIN}/authors/`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -32,7 +32,8 @@ const AddAuthor = () => {
             setAge(25)
         }
         else {
-            console.log("An error occured")
+            setError({ status: true, message: "Please fill out the form properly" })
+            setSuccess({ ...success, status: false })
         }
     }
     const nameChangeHandler = (e) => {

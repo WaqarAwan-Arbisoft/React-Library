@@ -16,7 +16,7 @@ const AddBook = () => {
 
     useEffect(() => {
         const fetchAuthorList = async () => {
-            let response = await fetch("http://localhost:8000/authors/")
+            let response = await fetch(`${process.env.REACT_APP_BACKEND_DOMAIN}/authors/`)
             let respData;
             if (response.ok) {
                 respData = await response.json();
@@ -42,7 +42,7 @@ const AddBook = () => {
         formData.append('publishDate', new Date().toISOString())
         formData.append('NoOfPages', noOfPages)
         formData.append('image', profileImage)
-        const response = await fetch("http://localhost:8000/books", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_DOMAIN}/books`, {
             method: "POST",
             body: formData
         })

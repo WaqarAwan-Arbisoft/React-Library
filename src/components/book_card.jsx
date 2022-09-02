@@ -2,26 +2,11 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 
 const BookCard = (props) => {
     const [authorName, setAuthorName] = useState("");
-    useEffect(() => {
-        const fetchAllAuthors = async () => {
-            console.log(`http://localhost:8000/authors/${props.book.author}`)
-            let response = await fetch(`http://localhost:8000/authors/${props.book.author}`);
-            if (response.ok) {
-                let respData = await response.json();
-                setAuthorName(respData.name)
-            }
-        }
-        try {
-            fetchAllAuthors();
-        }
-        catch (err) {
-            console.log(err)
-        }
-    }, [])
     return (
         <>
             <Card className='m-4' style={{ width: '18rem' }}>
@@ -29,9 +14,9 @@ const BookCard = (props) => {
                 <Card.Body>
                     <Card.Title>{props.book.name}</Card.Title>
                     <Card.Text>
-                        <b>Published By: </b>{authorName}<br></br>
+                        <b>Published By: </b>{props.book.author.name}<br></br>
                     </Card.Text>
-                    <Button className='btn btn-success'>Show Details</Button>
+                    <Link to={'' + props.book.pk} className='btn btn-success'>Show Details</Link>
                 </Card.Body>
             </Card>
         </>
